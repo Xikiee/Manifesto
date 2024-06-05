@@ -12,7 +12,7 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            height: 200vh;
+            min-height: 200vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -56,45 +56,37 @@
 
         .container {
             display: flex;
+            flex-wrap: wrap;
             align-items: flex-start;
-            margin-top: 150px;
+            margin-top: 200px;
             width: 80%;
+            max-width: 1200px;
+        }
+
+        .image-container, .content, .chart-details {
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 calc(50% - 40px);
+            box-sizing: border-box;
         }
 
         .image-container {
-            flex: 0 0 40%;
-            margin-right: 20px;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .content {
-            flex: 1;
-            padding: 20px;
-            background-color: white;
-        }
-
-        #main-image {
+        #main-image, #polluter-chart {
             width: 100%;
             height: auto;
-            object-fit: contain;          
-        }
-
-        #polluter-chart {
-            width: 300px; /* Make the image smaller */
-            height: auto;
-            position: absolute;
-            top: 100%; /* Position the image below the first one */
-            right: -900px; /* Adjust to move the image to the right side */
+            object-fit: contain;
+            margin-bottom: 20px;
         }
 
         .chart-details {
-            position: absolute;
-            top: calc(100% - 150px); /* Position the text box just below the first image */
-            left: 400px;
-            right: 550px; /* Ensure the text box doesn't overlap with the polluter-chart */
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for better visibility */
+            flex: 1 1 100%;
         }
     </style>
 </head>
