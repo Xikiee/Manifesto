@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product X</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 200vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+            z-index: 1000;
+            transition: all 0.5s ease;
+        }
+
+        .header h1 {
+            margin: 0;
+            padding: 20px;
+            font-size: 4em;
+            transition: all 0.5s ease;
+            font-family: Impact, 'Libre Baskerville', serif;
+        }
+
+        .header.shrink h1 {
+            padding: 10px;
+            font-size: 1.5em;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .container {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 150px;
+            width: 80%;
+        }
+
+        .image-container {
+            flex: 0 0 40%;
+            margin-right: 20px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+        }
+
+        #main-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="header">
+        <button class="home-button" onclick="window.location.href='Manifesto.html'">Home</button>
+        <h1 id="main-title">Product X</h1>
+    </div>
+    <div class="container">
+        <div class="image-container">
+            <img src="product_3.png" alt="Product 3" id="main-image"> 
+        </div>
+        <div class="content">
+            <p>Details about Product X...</p>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const scrollY = window.scrollY;
+
+            // For the header to shrink
+            if (scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        });
+    </script>
+</body>
+</html>

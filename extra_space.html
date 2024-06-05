@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability Choice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 300vh; /* Make the page tall enough to scroll */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+            z-index: 1000;
+            transition: all 0.5s ease;
+        }
+
+        .header h1 {
+            margin: 0;
+            padding: 20px;
+            font-size: 4em;
+            transition: all 0.5s ease;
+            font-family: Impact, 'Libre Baskerville', serif;
+        }
+
+        .header.shrink h1 {
+            padding: 10px;
+            font-size: 1.5em;
+        }
+
+        .products {
+            margin-top: 400px; /* Move the image further down */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-row {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .product-row img {
+            margin: 0 10px;
+            width: 150px; /* Adjust the size as needed */
+            height: auto;
+            cursor: pointer;
+        }
+
+        #main-image {
+            width: 100vw;
+            height: calc(100vh - 120px); /* Adjust height to account for initial title */
+            object-fit: cover;
+            transform: scale(1.5) translateY(0%);
+            transition: transform 0.8s ease; /* Smoother transition */
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="header">
+        <h1 id="main-title">Make it Green</h1>
+    </div>
+    <div class="products">
+        <img src="initial_product.png" alt="Sustainable Products" id="main-image">
+        <div class="product-row">
+            <img src="product_1.png" alt="Product 1" onclick="window.location.href='product_page_1.html'">
+            <img src="product_2.png" alt="Product 2" onclick="window.location.href='product_page_2.html'">
+            <img src="product_3.png" alt="Product 3" onclick="window.location.href='product_page_3.html'">
+        </div>
+        <div class="product-row">
+            <img src="product_4.png" alt="Product 4" onclick="window.location.href='product_page_4.html'">
+            <img src="product_5.png" alt="Product 5" onclick="window.location.href='product_page_5.html'">
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const mainImage = document.getElementById('main-image');
+            const scrollY = window.scrollY;
+            const maxZoomOutScroll = 600; // Adjust this value to determine when the image starts to shrink
+
+            // Calculate the scale and translateY values based on scroll position
+            let scale = 1.5;
+            let translateY = 0;
+
+            if (scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+
+            if (scrollY > 200 && scrollY <= maxZoomOutScroll) { // Reveal the full image as you scroll
+                const revealProgress = (scrollY - 200) / (maxZoomOutScroll - 200);
+                scale = 1.5 - 0.5 * revealProgress; // Adjust scale from 1.5 to 1
+                translateY = -20 * (1 - revealProgress); // Adjust translateY from -20% to 0%
+            } else if (scrollY > maxZoomOutScroll) { // Start shrinking the image
+                const shrinkProgress = (scrollY - maxZoomOutScroll) / 1000; // Adjust the divisor for desired shrink speed
+                scale = 1 - 0.5 * shrinkProgress; // Scale down from 1 to 0.5
+                translateY = -10 * shrinkProgress; // TranslateY to move it off the screen
+            }
+
+            mainImage.style.transform = `scale(${scale}) translateY(${translateY}%)`;
+        });
+    </script>
+</body>
+</html>

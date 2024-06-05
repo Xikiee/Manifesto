@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability Choice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 300vh; /* Make the page tall enough to scroll */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+            z-index: 1000;
+            transition: all 0.5s ease;
+        }
+
+        .header h1 {
+            margin: 0;
+            padding: 20px;
+            font-size: 5em; /* Increase initial font size */
+            transition: all 0.5s ease;
+            font-family: Impact, 'Libre Baskerville', serif;
+        }
+
+        .header.shrink h1 {
+            padding: 10px;
+            font-size: 1.5em;
+        }
+
+        .products {
+            margin-top: 400px; /* Move the image further down */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-row {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .product-row img {
+            margin: 0 10px;
+            width: 450px; /* Increase size of product images */
+            height: 450px; /* Increase size of product images */
+            object-fit: cover; /* Ensure images maintain their aspect ratio */
+            cursor: pointer;
+        }
+
+        #product_4 {
+            object-fit: contain; /* Ensure the entire image is visible without cropping */
+        }
+
+        #main-image {
+            width: 100vw;
+            height: auto;
+            max-height: 100vh;
+            object-fit: contain;
+            transform-origin: top; /* Ensure the zoom happens from the top */
+            transform: scale(2) translateY(-25%); /* Initial zoom in at the top */
+            transition: transform 1s ease; /* Smoother transition */
+        }
+
+        .subheading {
+            font-family: Impact, 'Libre Baskerville', serif;
+            font-size: 4em; /* Same size as the original title size */
+            margin: 40px 0 20px;
+        }
+
+        .rules-list {
+            width: 80%;
+        }
+
+        .rules-list h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .rules-list p {
+            font-size: 1.2em;
+            margin: 5px 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="header">
+        <h1 id="main-title">Make it Green</h1>
+    </div>
+    <div class="products">
+        <img src="initial_product.png" alt="Sustainable Products" id="main-image">
+        <div class="subheading">About Snow</div>
+        <div class="rules-list">
+            <h2>What we are</h2>
+            <p>Snow is a... </p>
+            <h2>Heading 2</h2>
+            <p>TEXT</p>
+            <h2>Heading 3</h2>
+            <p>TEXT</p>
+            <h2>Heading 4</h2>
+            <p>TEXT</p>
+            <h2>Heading 5</h2>
+            <p>TEXT</p>
+            <h2>Heading 6</h2>
+            <p>TEXT</p>
+            <h2>Heading 7</h2>
+            <p>TEXT</p>
+            <h2>Heading 8</h2>
+            <p>TEXT</p>
+            <h2>Heading 9</h2>
+            <p>TEXT</p>
+            <h2>Heading 10</h2>
+            <p>TEXT</p>
+        </div>
+        <div class="product-row">
+            <img src="product_1.png" alt="Product 1" onclick="window.location.href='product_page_1.html'">
+            <img src="product_2.png" alt="Product 2" onclick="window.location.href='product_page_2.html'">
+            <img src="product_3.png" alt="Product 3" onclick="window.location.href='product_page_3.html'">
+        </div>
+        <div class="product-row">
+            <img src="product_4.png" alt="Product 4" id="product_4" onclick="window.location.href='product_page_4.html'">
+            <img src="product_5.png" alt="Product 5" onclick="window.location.href='product_page_5.html'">
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const mainImage = document.getElementById('main-image');
+            const scrollY = window.scrollY;
+
+            // Header shrinking logic
+            if (scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+
+            // Image zoom and position logic
+            let scale = 2; // Initial scale
+            let translateY = -25; // Initial translateY to keep top visible
+
+            if (scrollY < 300) {
+                // Zoom out the image
+                scale = 2 - (scrollY / 300);
+                translateY = -25 * (scale - 1); // Adjust translateY as the scale changes
+            } else if (scrollY < 1300) {
+                // Move the image up as it zooms out
+                scale = 1;
+                translateY = -(scrollY - 300) / 10;
+            } else {
+                // Shrink the image off the page
+                const shrinkFactor = (scrollY - 1300) / 500;
+                scale = Math.max(1 - shrinkFactor, 0);
+                translateY = -(scrollY - 300) / 10;
+            }
+
+            mainImage.style.transform = `scale(${scale}) translateY(${translateY}%)`;
+        });
+    </script>
+</body>
+</html>
