@@ -29,6 +29,54 @@
             text-align: center;
             z-index: 1000;
             transition: all 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .dropdown {
+            position: absolute;
+            left: 20px;
+        }
+
+        .dropdown button {
+            background-color: #8C6E63;
+            color: white;
+            width: 160px;
+            height: 40px;
+            font-size: 25px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .dropdown button:hover {
+            background-color: #6d5147;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         .header h1 {
@@ -63,6 +111,11 @@
             height: 450px; /* Increase size of product images */
             object-fit: cover; /* Ensure images maintain their aspect ratio */
             cursor: pointer;
+            transition: transform 0.3s ease; /* Smooth transition for the transform */
+        }
+
+        .product-row img:hover {
+            transform: scale(1.1); /* Slightly enlarge the image on hover */
         }
 
         #product_4 {
@@ -99,6 +152,7 @@
             font-size: 1.0em; /* Increase font size of paragraphs */
             margin: 5px 0 20px;
         }
+
         .extra-information {
             width: 70%;
         }
@@ -113,6 +167,7 @@
             font-size: 1.0em; /* Increase font size of paragraphs */
             margin: 5px 0 20px;
         }
+
         .about-snow {
             width: 70%;
         }
@@ -131,24 +186,37 @@
 </head>
 <body>
     <div class="header" id="header">
+        <div class="dropdown">
+            <button>Menu</button>
+            <div class="dropdown-content">
+                <a href="product_page_1.html">Product 1</a>
+                <a href="product_page_2.html">Product 2</a>
+                <a href="product_page_3.html">Product 3</a>
+                <a href="product_page_4.html">Product 4</a>
+                <a href="product_page_5.html">Product 5</a>
+            </div>
+        </div>
         <h1 id="main-title">Make it Green</h1>
     </div>
     <div class="products">
         <img src="initial_product.png" alt="Sustainable Products" id="main-image">
         <div class="subheading">What Do We Stand For</div>
         <div class="rules-list">
-            <p>Desing should be made honest. It should not claim to be something else nor should it appear or suggest to be more than it is. 
+            <p>Design should be made honest. It should not claim to be something else nor should it appear or suggest to be more than it is. 
                 This statement is taken in the perspective of sustainability and specifically sustainable packaging, material or product with reference to green washing.
                 Green washing takes many forms that some may not realize.
             </p>
             <ol>
                 <li>Design should most and for most not lie to the consumers. </li>
                 <li>Design should not try to exaggerate its green effect by emphasizing one sustainable change made.</li>
-                <li>Design should not be made pruposefully vague in order to imply it is something it is not. </li>
+                <li>Design should not be made purposefully vague in order to imply it is something it is not. </li>
                 <li>Design should not simply add green symbols and words to evoke the green sensation. </li>
                 <li>Design should not just add sustainable material for the sake of appearing more sustainable. </li>
             </ol>
-        </p>
+            <p>
+                The following designs are examples of real-life examples of design for packaging. Before clicking on the image, think about what is wrong with each of the images and which of
+                the designs are or are not greenwashing the consumer. Click on the image to find out more about what is wrong with each product and which major company this concept stems from. 
+            </p>
         </div>
         <div class="product-row">
             <img src="product_1.png" alt="Product 1" onclick="window.location.href='product_page_1.html'">
@@ -160,22 +228,22 @@
             <img src="product_5.png" alt="Product 5" onclick="window.location.href='product_page_5.html'">
         </div>
         <div class="extra-information">
-            <p>Green washign is dangeorus as it keeps people from really developing something more sustainable.
+            <p>Green washing is dangerous as it keeps people from really developing something more sustainable.
                 <ul>
-                    <li>Plastic containers can be swapped out with refillable multi use (cabinet health) </li>
+                    <li>Plastic containers can be swapped out with refillable multi-use (cabinet health) </li>
                     <li>As a company can end up getting sued (coca cola)</li>
-                    <li>May lead to over consumption and over waste. People buy more as they feel more sustainable.</li>
+                    <li>May lead to overconsumption and over waste. People buy more as they feel more sustainable.</li>
                 </ul>
             </p>
         </div>
         <div class="subheading">About Snow</div>
         <div class="about-snow">
             <p>
-                Snow is a fake brand that is taken as an example of how real companies package and show their products in order to apeal to the more sustainably woke society. 
+                Snow is a fake brand that is taken as an example of how real companies package and show their products in order to appeal to the more sustainably woke society. 
 
-                Snow is taken as a metaphor for greenwashing, creating a false sense of serene and beauty when inreality what is underneath has not changed. 
+                Snow is taken as a metaphor for greenwashing, creating a false sense of serene and beauty when in reality what is underneath has not changed. 
 
-                The website is used as a medium in the hope to reach a wider audience. The HTML code is converted to real domain made ot be accessible online by anyone rather then just a folder. The aim is for people to rethink their designs in order to not just come across as green but to really decide if it trully is green,  ut at the same time as a side also point out to people real cases of it in real life in order for them to be avoided. 
+                The website is used as a medium in the hope to reach a wider audience. The HTML code is converted to a real domain made to be accessible online by anyone rather than just a folder. The aim is for people to rethink their designs in order to not just come across as green but to really decide if it truly is green, but at the same time as a side also point out to people real cases of it in real life in order for them to be avoided. 
             </p>
         </div>
     </div>
