@@ -27,6 +27,54 @@
             text-align: center;
             z-index: 1000;
             transition: all 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .dropdown {
+            position: absolute;
+            left: 20px;
+        }
+
+        .dropdown button {
+            background-color: #8C6E63;
+            color: white;
+            width: 160px;
+            height: 40px;
+            font-size: 25px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .dropdown button:hover {
+            background-color: #6d5147;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         .header h1 {
@@ -40,18 +88,6 @@
         .header.shrink h1 {
             padding: 10px;
             font-size: 1.5em;
-        }
-
-        .home-button {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background-color: #8C6E63;
-            color: white;
-            padding: 5px 10px;
-            border: none;
-            cursor: pointer;
-            z-index: 1100;
         }
 
         .container {
@@ -81,7 +117,17 @@
 </head>
 <body>
     <div class="header" id="header">
-        <button class="home-button" onclick="window.location.href='Manifesto.html'">Home</button>
+        <div class="dropdown">
+            <button>Menu</button>
+            <div class="dropdown-content">
+                <a href="Manifesto.html">Home</a>
+                <a href="product_page_1.html">Product 1</a>
+                <a href="product_page_2.html">Product 2</a>
+                <a href="product_page_3.html">Product 3</a>
+                <a href="product_page_4.html">Product 4</a>
+                <a href="product_page_5.html">Product 5</a>
+            </div>
+        </div>
         <h1 id="main-title">Product 5</h1>
     </div>
     <div class="container">
@@ -91,12 +137,11 @@
         <div class="content">
             <p>Inspired by mentos, keeping things purposefully vague
                 <ul>
-                    <li>made out of 90% “paper board”, unclear as to what exactly that ,means. implying how green it is but fails to mention how it cannot be recycled as it is made up of a mix between paper, plastic, and aluminium
-                    </li>
-                    <li>Still somewhat good as overall using less plastic</li>
-                    <li>implying that it can be recycled when it cant</li>
-                    <li>people really drawn to the brown packaging making it appear very green.</li>
-                    <li>over all not as bad, still single use, unrecyclable but most people dont recycle anyways, similar to paper straws.</li>
+                    <li>Made out of 90% “paper board”, unclear as to what exactly that means. Implying how green it is but fails to mention how it cannot be recycled as it is made up of a mix between paper, plastic, and aluminium.</li>
+                    <li>Still somewhat good as overall using less plastic.</li>
+                    <li>Implying that it can be recycled when it can't.</li>
+                    <li>People really drawn to the brown packaging making it appear very green.</li>
+                    <li>Overall not as bad, still single-use, unrecyclable but most people don't recycle anyways, similar to paper straws.</li>
                 </ul>
             </p>
         </div>
