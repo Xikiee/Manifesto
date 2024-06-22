@@ -129,19 +129,27 @@
         }
 
         .water-ref-image img {
-            width: 150px; /* Adjust the width to make images smaller */
+            width: 100px; /* Adjust the width to make images smaller */
             height: auto;
             margin: 0 10px;
         }
 
         #poland-springs {
             float: right;
-            margin: -50px 20px 10px 10px; /* Move up and to the right */
+            margin: -120px 0 10px 20px; /* Move up and to the right */
         }
 
         #evian {
             float: left;
-            margin: 50px 10px 10px -20px; /* Move down and to the left */
+            margin: 120px 20px 10px 0; /* Move down and to the left */
+        }
+
+        @media (max-width: 768px) {
+            #poland-springs, #evian {
+                float: none;
+                display: block;
+                margin: 10px auto;
+            }
         }
     </style>
 </head>
@@ -168,15 +176,13 @@
             <p>
                 Evian and Poland Springs are the top 3 and 4 highest selling water brands in the US as of 2023 [Maleha Afzal]. Both of these water brands use the same technique to advertise their product to the consumer.
                 As seen by the example product image, the design on the packaging alludes feelings associated with nature.
-            </p>
-            <div class="water-ref-image">
                 <img src="poland_spring.png" alt="Poland Springs" id="poland-springs">
-                <img src="evian.png" alt="Evian" id="evian">
-            </div>
+            </p>
             <p>
                 Previously, Poland Springs has received numerous counts of backlash, stating the design of the packaging is manipulative. 
                 [Sustainable footprint] argues 'the eco-friendly label eases people's guilt' when purchasing the plastic bottle which is detrimental to the environment.
                 Due to the natural connotations, consumers are more likely to look over the harmful environmental impacts in their frequent purchase, using random green symbols and words that are unclear to the user/consumer what it means to give the effect of sustainability.
+                <img src="evian.png" alt="Evian" id="evian">
             </p>
         </div>
     </div>
