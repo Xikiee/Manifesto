@@ -12,7 +12,7 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            height: 200vh;
+            min-height: 200vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -93,26 +93,62 @@
 
         .container {
             display: flex;
+            flex-wrap: wrap;
             align-items: flex-start;
-            margin-top: 150px;
+            margin-top: 200px;
             width: 80%;
+            max-width: 1200px;
+        }
+
+        .image-container, .content, .content_2, .chart-details {
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 calc(50% - 40px);
+            box-sizing: border-box;
+            font-size: 1.4em;
+        }
+
+        #content p, #content_2 p, .chart-details p {
+            text-align: justify;
         }
 
         .image-container {
-            flex: 0 0 40%;
-            margin-right: 20px;
-        }
-
-        .content {
-            flex: 1;
-            padding: 20px;
-            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         #main-image {
+            width: 60%;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .water-images {
+            width: 100%;
+        }
+
+        .water-images img {
             width: 100%;
             height: auto;
             object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .references {
+            font-size: 0.8em;
+            width: 80%;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        @media (max-width: 768px) {
+            .image-container, .content, .content_2, .chart-details {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
@@ -137,18 +173,31 @@
         <div class="image-container">
             <img src="product_4.png" alt="Product 4" id="main-image"> 
         </div>
-        <div class="content">
-            <p>Inspired by nivea, and toothpastes. Adds sustainable material for the sake of it being sustainable.
-                <ul>
-                    <li>Sometimes used to store important information (health related, ingredients etc. (but this can be placed instead on the packaging, or in the day and age of internet on a website (QR code)).</li>
-                    <li>Better than other over packaging which uses plastic to wrap other plastic containers.</li>
-                    <li>Has made no change to the amount of plastic or the type but instead just adds on to it.</li>
-                    <li>More materials, more waste.</li>
-                    <li>People shown to spend more and feel better about the purchase when plastic wrapped in paper container.</li>
-                    <li>Usually has the same amount of information, same amount of advertising adds nothing.</li>
-                </ul>
+        <div class="content" id="content">
+            <p>
+                This packaging design is inspired by nivea and toothpaste brands which are seen to over packaging their product just to conceal the plastic container [Krishna]. Giving credit where necessary, in some cases this is done to store important information about the product such as the ingredients and or warnings. While in this case the use of a cardboard box is better then using another layer of plastic, the best solution would be the use of a singular packaging layer. It is instead possible to write a short disclaimer on the products physicals packaging (in this case the actual bottle). Additionally, a qr code can printed on the packaging which when scanned will redirect the consumer to a web page about the product. In cases where it is legally required to provide the extensive amount of warnings physically, (such as for medical products), it is understandable for this practice to be in use. However for cases such as lotions or toothpaste, this overpackaging is simply overkill. 
+
             </p>
         </div>
+        <div class="content_2" id="content_2">
+            <p>
+                The appeal for this in the perspective of a designer, is that studies shown that people are more likely to purchase a product where the packaging is made from a paper like material. This is evident from a survey done by Ipsos where “seven in ten (71%) say they are more likely to buy brands that package products in paper or cardboard that in other materials” [ipsos]. Similarly, in a series of 8 studies done across the US, UK and the Netherlands show that “consumers will perceive a product's packaging as more environmentally friendly if it's plastic with an additional layer of paper than if the product is visibly packaged in identical plastic packaging but without the paper”[Krishna]. However this practice is more costly on the producers as more money is being invested into unnecessary packaging. Not to mention the extra space taken up by the box may make transportation less efficient and more costly. Other negative impacts with respect to customer view is further explained on the home page.
+            </p>
+        </div>
+        <div class="chart-details">
+            <div class="water-images">
+                <img src="nivea_packaging.png" alt="Nivea Over Packaging" id="nivea-packaging"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="references">
+        <ol>
+            <li>Afzal, M. (2023) 5 top selling water brands in the US, Insider Monkey. Available at: https://www.insidermonkey.com/blog/5-top-selling-water-brands-in-the-us-1227055/3/ (Accessed: 21 June 2024). </li>
+            <li>Greenwashing water bottles: Sustainable footprint (2012) Sustainable Footprint |. Available at: https://sustainablefootprint.org/greenwashing-water-bottles/ (Accessed: 21 June 2024). </li>
+            <li>(No date) Poland spring 16.9-fl oz Spring Bottled Water in the water department at Lowes.com. Available at: https://www.lowes.com/pd/Poland-Spring-16-9-fl-oz-Spring-Bottled-Water/4781943 (Accessed: 22 June 2024). </li>
+            <li>Evian Water (no date) The French Kitchen Culinary Center. Available at: https://tfkcc.com/shop/evian-water/ (Accessed: 22 June 2024). </li>
+        </ol>
     </div>
 
     <script>
