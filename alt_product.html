@@ -12,7 +12,7 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            height: 200vh;
+            min-height: 200vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -62,9 +62,7 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
-        #content p {
-            text-align: justify;
-        }
+
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
@@ -95,18 +93,57 @@
 
         .container {
             display: flex;
+            flex-wrap: wrap;
             align-items: flex-start;
             margin-top: 150px;
-            width: 40%;
+            width: 60%;
+            max-width: 1200px;
+            position: relative;
         }
 
         .content {
             flex: 1;
-            font-size:1.5em;
+            font-size: 1.5em;
             padding: 20px;
             background-color: white;
+            z-index: 2;
         }
 
+        .top-left-img {
+            position: absolute;
+            left: -340px; /* Adjust as needed */
+            top: 20px; /* Adjust as needed */
+            width: 350px; /* Adjust width as needed */
+            z-index: 1;
+        }
+
+        .mid-right-img {
+            position: absolute;
+            right: -360px; /* Adjust as needed */
+            top: 50%; /* Adjust top position to midway down the page */
+            width: 380px; /* Adjust width as needed */
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .top-left-img img {
+            width: 100%; /* Ensure the image fits within its container */
+            height: 450px;
+        }
+        
+        .mid-right-img img {
+            width: 100%; /* Ensure the image fits within its container */
+            height: auto;
+        }
+
+        figcaption {
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        #content p {
+            text-align: justify;
+        }
     </style>
 </head>
 <body>
@@ -120,13 +157,19 @@
                 <a href="product_page_3.html">Slims</a>
                 <a href="product_page_4.html">Capsule</a>
                 <a href="product_page_5.html">Plastic Blend</a>
-                <a href="alt_product.html"> Alternative Product</a>
+                <a href="alt_product.html">Alternative Product</a>
                 <a href="about_snow.html"> About Snow</a>
             </div>
         </div>
         <h1 id="main-title">Alternative Product</h1>
     </div>
     <div class="container">
+        <div class="top-left-img">
+            <figure>
+                <img src="initial_product.png" alt="Initial Product" id="initial_product">
+                <figcaption>Figure 1: Initial product with no design.</figcaption>
+            </figure>
+        </div>
         <div class="content" id="content">
             <p>
                 Different approaches can be taken to avoid irresponsible design.
@@ -177,6 +220,12 @@
                 this will overcome the amount of packaging created if the smaller individual product is bought in equal 
                 amounts to the refill. 
             </p>
+        </div>
+        <div class="mid-right-img">
+            <figure>
+                <img src="alt_design_img.png" alt="Design Ideas" id="alt_design">
+                <figcaption>Figure 2: Design ideas to help people recycle the product.</figcaption>
+            </figure>
         </div>
     </div>
 
