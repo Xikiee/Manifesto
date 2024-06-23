@@ -12,7 +12,7 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            height: 200vh;
+            min-height: 200vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -93,26 +93,62 @@
 
         .container {
             display: flex;
+            flex-wrap: wrap;
             align-items: flex-start;
-            margin-top: 150px;
+            margin-top: 200px;
             width: 80%;
+            max-width: 1200px;
+        }
+
+        .image-container, .content, .content_2, .chart-details {
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 calc(50% - 40px);
+            box-sizing: border-box;
+            font-size: 1.4em;
+        }
+
+        #content p, #content_2 p, .chart-details p {
+            text-align: justify;
         }
 
         .image-container {
-            flex: 0 0 40%;
-            margin-right: 20px;
-        }
-
-        .content {
-            flex: 1;
-            padding: 20px;
-            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         #main-image {
             width: 100%;
             height: auto;
             object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .water-images {
+            width: 100%;
+        }
+
+        .water-images img {
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .references {
+            font-size: 0.8em;
+            width: 80%;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        @media (max-width: 768px) {
+            .image-container, .content, .content_2, .chart-details {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
@@ -127,7 +163,7 @@
                 <a href="product_page_3.html">Slims</a>
                 <a href="product_page_4.html">Capsule</a>
                 <a href="product_page_5.html">Plastic Blend</a>
-                <a href="alt_product.html"> Alternative Product</a>
+                <a href="alt_product.html">Alternative Product</a>
                 <a href="about_snow.html"> About Snow</a>
             </div>
         </div>
@@ -137,17 +173,29 @@
         <div class="image-container">
             <img src="product_5.png" alt="Product 5" id="main-image"> 
         </div>
-        <div class="content">
-            <p>Inspired by mentos, keeping things purposefully vague
-                <ul>
-                    <li>Made out of 90% “paper board”, unclear as to what exactly that means. Implying how green it is but fails to mention how it cannot be recycled as it is made up of a mix between paper, plastic, and aluminium.</li>
-                    <li>Still somewhat good as overall using less plastic.</li>
-                    <li>Implying that it can be recycled when it can't.</li>
-                    <li>People really drawn to the brown packaging making it appear very green.</li>
-                    <li>Overall not as bad, still single-use, unrecyclable but most people don't recycle anyways, similar to paper straws.</li>
-                </ul>
+        <div class="content" id="content">
+            <p>
+                This product is based on the ambiguous claims that mentos makes with their newly improved more environmentally friendly packaging. Mentos is seen implying this new packaging is more environmentally friendly due to it being composed of 90% 'paper board'. However they fail to mention what the other 10% of the composition is. 
+
+                While paper is commonly known as an easily recyclable and is often associated with being a more sustainable material, this paper board is further mixed with plastic and aluminum. This is understandable as paper itself would not make a durable material for packaging due to its limitations against water and liquids. It is great to see that the designer has made efforts to decrease the amount of plastic material being used.
             </p>
         </div>
+        <div class="content_2" id="content_2">
+            <p>
+                Despite this however, the design heavily implies and claims that this packaging is recyclable. Experts claim otherwise with statements like “such a blended mix of materials is, in practice, impossible to recycle.” [Changingmarkets]. This creates confusion for the consumer with reference to how it should be disposed. This can also cause issues in the future due to fines as countries are increasing their guidelines on sustainability claims for marketing [”Products”]. This is expanded upon in the effects of greenwashing on the home page. Moreover a possible solution is suggested in the solution product. 
+            </p>
+        </div>
+        <div class="chart-details">
+            <div class="water-images">
+                <img src="mentos_pic.png" alt="Mentos Reference" id="mentos-pic"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="references">
+        <ol>
+            <li>Changingmarkets (2023) Pure-ly misleading?, Greenwash. Available at: https://greenwash.com/pure-ly-misleading/ (Accessed: 23 June 2024). </li>
+        </ol>
     </div>
 
     <script>
