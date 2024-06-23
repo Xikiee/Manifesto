@@ -95,54 +95,69 @@
             display: flex;
             flex-wrap: wrap;
             align-items: flex-start;
-            margin-top: 150px;
-            width: 60%;
+            margin-top: 200px;
+            width: 80%;
             max-width: 1200px;
-            position: relative;
         }
 
-        .content {
-            flex: 1;
-            font-size: 1.5em;
+        .references {
+            font-size: 0.8em;
+            width: 80%;
             padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .image-container, .content {
             background-color: white;
-            z-index: 2;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 calc(50% - 40px);
+            box-sizing: border-box;
+            font-size: 1.4em;
         }
 
-        .top-left-img {
-            position: absolute;
-            left: -340px; /* Adjust as needed */
-            top: 20px; /* Adjust as needed */
-            width: 350px; /* Adjust width as needed */
-            z-index: 1;
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .mid-right-img {
-            position: absolute;
-            right: -360px; /* Adjust as needed */
-            top: 50%; /* Adjust top position to midway down the page */
-            width: 380px; /* Adjust width as needed */
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-
-        .top-left-img img {
-            width: 100%; /* Ensure the image fits within its container */
-            height: 450px;
-        }
-        
-        .mid-right-img img {
-            width: 100%; /* Ensure the image fits within its container */
+        #initial_product, #alt_design {
+            width: 100%;
             height: auto;
-        }
-
-        figcaption {
-            text-align: center;
-            font-size: 0.9em;
+            object-fit: contain;
+            margin-bottom: 20px;
         }
 
         #content p {
             text-align: justify;
+        }
+        #third-text-block p {
+            text-align:justify;
+        }
+        .chart-details {
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 calc(50% - 40px);
+            box-sizing: border-box;
+            font-size: 1.4em;
+        }
+
+        #chart-details p {
+            text-align: justify;
+        }
+        
+        .third-text-block {
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 calc(50% - 40px);
+            box-sizing: border-box;
+            font-size: 1.4em;
         }
     </style>
 </head>
@@ -164,12 +179,6 @@
         <h1 id="main-title">Alternative Product</h1>
     </div>
     <div class="container">
-        <div class="top-left-img">
-            <figure>
-                <img src="initial_product.png" alt="Initial Product" id="initial_product">
-                <figcaption>Figure 1: Initial product with no design.</figcaption>
-            </figure>
-        </div>
         <div class="content" id="content">
             <p>
                 Different approaches can be taken to avoid irresponsible design.
@@ -181,13 +190,22 @@
                 This is expressed with reference to the packaging claiming to not be plastic. 
                 Rather than making a false claim it would be better to not add anything at all.
                 If no action is being taken to make a sustainability difference, then do not claim to be making that change.
-                Picture of the normal product
             </p>
             <p>
                 Another easy design change would be to remove the use of an extra cardboard casing when it is unnecessary. 
                 The same amount of information can be added to the product itself such as the ingredients list, instructions, warnings, etc. 
                 In most cases this is already the case, thus an extra box is unnecessary. 
             </p>
+        </div>
+        <div class="image-container">
+            <img src="initial_product.png" alt="Initial Product" id="initial_product">
+            <figcaption>Figure 1: Initial product with no design.</figcaption>
+        </div>
+        <div class="image-container">
+            <img src="alt_design_img.png" alt="Design Ideas" id="alt_design">
+            <figcaption>Figure 2: Design ideas to help people recycle the product.</figcaption>
+        </div>
+        <div class="chart-details" id="chart-details">
             <p>
                 These solutions however only lead to normal plastic packaging. 
                 If the goal is to promote the sustainability aspect of a product and appeal to a more environmental consumer, 
@@ -204,8 +222,10 @@
                 of each piece the way it should. Through field testing by asking students of TU/e, those that claimed to care 
                 about this aspect expressed how they would go out of their way to do this as they are often confused about how to 
                 dispose of products with vague material.  
-                Insert the design instruction
             </p>
+            
+        </div>
+        <div class="third-text-block" id="third-text-block">
             <p>
                 An even better design change would be one that can change the behaviour of consumers. 
                 Designing the product package to be refillable instead of one time use would create better environmental impacts. 
@@ -220,12 +240,13 @@
                 this will overcome the amount of packaging created if the smaller individual product is bought in equal 
                 amounts to the refill. 
             </p>
-        </div>
-        <div class="mid-right-img">
-            <figure>
-                <img src="alt_design_img.png" alt="Design Ideas" id="alt_design">
-                <figcaption>Figure 2: Design ideas to help people recycle the product.</figcaption>
-            </figure>
+            <p>
+                In conclusion, it is vital to be transparent with sustainability claims. Not only does it help in building 
+                consumer trust, but it also encourages better environmental practices. Companies should aim for genuine improvements 
+                rather than superficial changes to truly contribute to a sustainable future. Greenwashing can be avoided by focusing 
+                on actual impact rather than appearances. As consumers become more environmentally conscious, they will appreciate 
+                and support genuine efforts over deceptive practices.
+            </p>
         </div>
     </div>
 
