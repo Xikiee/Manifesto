@@ -260,26 +260,26 @@
             }
 
             .product-row_2 img {
-                width: 70%; /* Adjust width for mobile */
+                width: 70%; 
                 max-width: 80%;
-                margin: 10px 0; /* Adjust margin for better spacing */
+                margin: 10px 0; 
             }
 
             .subheading {
-                font-size: 2em; /* Smaller subheading for mobile */
+                font-size: 2em; 
             }
 
             .rules-list, .extra-information, .about-snow {
-                width: 90%; /* Adjust width for mobile */
-                font-size: 0.9em; /* Smaller font size for better fit */
+                width: 90%; 
+                font-size: 0.9em; 
             }
 
             .rules-list h2, .extra-information h2, .about-snow h2 {
-                font-size: 1.5em; /* Smaller headings for mobile */
+                font-size: 1.5em; 
             }
 
             .rules-list p, .extra-information p, .about-snow p {
-                font-size: 0.9em; /* Smaller paragraphs for mobile */
+                font-size: 0.9em; 
             }
         }
     </style>
@@ -340,6 +340,9 @@
                 Using this tactic would also inhibit future sustainable growth of the company. As they take this to be enough, active incentive to research and develop better alternative methods are not taken or can be delayed [Shreenath]. Study shows that 
                 “66% of consumers are willing to spend more money on sustainable products, and... people are willing to pay as much as 25% more for greener alternatives” [”Do Consumers”]. This is most likely already known, which is why greenwashing occurs. However, the greenwashing method may have worked for millennials (being twice as likely to reduce their environmental impact compared to boomers), but “Gen Z is soon to become the next dominant generation, with many being more concerned about sustainability than millennials” [”Do Consumers”].   As already seen with the numerous amount of knowledge and articles spread about greenwashing, these methods will not be enough in the future. As the society moves toward increasing interest in green purchases, the lack of action to truly become green will set the company behind. 
             </p>
+            <p>
+                A designers responsibility is also to design for practical use and clarity. The false claims made in the skims, the vague words used such as biodegradable and the misleading of composite paper and plastic material make it confusing for the consumer to know how to dispose of it properly. In many cases it may actually be “counter-productive, for example, putting ‘green’ packaging into home composting, where it may not break down effectively” [”What is”]. It can also cause materials that are non recyclable such as the Mentos packaging to be added to the recycling bin which can instead ”contaminate the recycling stream” and ”cause costly damage to the equipment” [US EPA]. Even if this does not lead to a lawsuit, it makes the design problematic and ultimately fails to serve its intended purpose. Responsible design requires transparency and a commitment to educating consumers about the correct disposal methods. Clear labeling and honest communication are essential to ensure that the end-of-life process for products aligns with environmental goals and reduces contamination in recycling streams. Designers must prioritize these aspects to foster trust and contribute to genuine sustainability efforts.
+            </p>
         </div>
     </div>
     <div class="references">
@@ -357,27 +360,26 @@
             const mainImage = document.getElementById('main-image');
             const scrollY = window.scrollY;
 
-            // Header shrinking logic
+            
             if (scrollY > 50) {
                 header.classList.add('shrink');
             } else {
                 header.classList.remove('shrink');
             }
 
-            // Image zoom and position logic
-            let scale = 2; // Initial scale
-            let translateY = -25; // Initial translateY to keep top visible
+            let scale = 2; 
+            let translateY = -25; 
 
             if (scrollY < 300) {
-                // Zoom out the image
+            
                 scale = 2 - (scrollY / 300);
-                translateY = -25 * (scale - 1); // Adjust translateY as the scale changes
+                translateY = -25 * (scale - 1); 
             } else if (scrollY < 1300) {
-                // Move the image up as it zooms out
+
                 scale = 1;
                 translateY = -(scrollY - 300) / 10;
             } else {
-                // Shrink the image off the page
+            
                 const shrinkFactor = (scrollY - 1300) / 500;
                 scale = Math.max(1 - shrinkFactor, 0);
                 translateY = -(scrollY - 300) / 10;
