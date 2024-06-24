@@ -150,6 +150,33 @@
                 flex: 1 1 100%;
             }
         }
+
+        .small-image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: calc(50% - 40px);
+            margin: 10px;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .full-width-image-container {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .small-image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .full-width-image-container img {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -190,15 +217,13 @@
                 The words written however shows more the attempt to appear sustainable. Vague words such as “eco-friendly” and “oxo-biodegradable” do not have clear definitions or standards, therefor could be made without facing legal complications while still benefiting from the possible advantages already mentioned above. These benefits although are not as good as they might initially seem or are no longer true. For example with the case of oxo-biodegradable the word is actually now banned in many European countries due to the “lack of evidence of biodegradability in real-world conditions” [“Products”]. Similarly, the US Federal Trade Commission (FTC) recently updated their green guide for the first time in 10 years which allows the FTC to “take enforcement action against the businesses violating them (the guide).” This includes using vague sustainable sounding words for marketing. The EU is also working to create a similar guide [“Products”]. This depicts how as society is increasingly becoming more aware of the environment and being more proactive, surface level sustainable appeal may actually cause economic hurt for the company due to fines and the need redesign to fit the different guidelines of different countries. On the consumer side, more people are becoming aware of these tactic and it causes trust to be lost for these companies and products. This negative effect and more are further explained on the home page.
             </p>
         </div>
-        <div class="chart-details">
-            <div class="water-images">
-                <img src="poland_spring.png" alt="Poland Springs" id="poland-springs"> 
-                <figcaption>Figure 2: Poland Spring packaging.</figcaption>
-            </div>
-            <div class="water-images">
-                <img src="evian.png" alt="Evian" id="evian">
-                <figcaption>Figure 3: Evian packaging.</figcaption>
-            </div>
+        <div class="small-image-container">
+            <img src="poland_spring.png" alt="Poland Springs" id="poland-springs"> 
+            <figcaption>Figure 2: Poland Spring packaging.</figcaption>
+        </div>
+        <div class="full-width-image-container">
+            <img src="evian.png" alt="Evian" id="evian">
+            <figcaption>Figure 3: Evian packaging.</figcaption>
         </div>
     </div>
 
